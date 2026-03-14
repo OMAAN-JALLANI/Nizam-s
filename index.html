@@ -1943,7 +1943,7 @@
             }
         }
 
-                /* ============================================
+        /* ============================================
            SIGNATURE MENU (TABBED)
         ============================================ */
         .signature-menu {
@@ -2088,8 +2088,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Center Button Area */
@@ -2103,7 +2110,8 @@
         ============================================ */
         @media (max-width: 992px) {
             .menu-list {
-                grid-template-columns: 1fr; /* 1 column on tablets */
+                grid-template-columns: 1fr;
+                /* 1 column on tablets */
                 gap: 20px;
             }
         }
@@ -2112,17 +2120,21 @@
             .menu-tabs {
                 justify-content: flex-start;
                 flex-wrap: nowrap;
-                overflow-x: auto; /* Enable horizontal scroll on mobile */
+                overflow-x: auto;
+                /* Enable horizontal scroll on mobile */
                 padding-bottom: 10px;
                 /* Hide scrollbar visually but keep functionality */
-                -ms-overflow-style: none;  
-                scrollbar-width: none;  
+                -ms-overflow-style: none;
+                scrollbar-width: none;
             }
+
             .menu-tabs::-webkit-scrollbar {
                 display: none;
             }
+
             .tab-btn {
-                white-space: nowrap; /* Keep tab text on one line */
+                white-space: nowrap;
+                /* Keep tab text on one line */
                 font-size: 13px;
                 padding: 8px 20px;
             }
@@ -2144,7 +2156,7 @@
             .menu-item-price {
                 font-size: 17px;
             }
-            
+
             .menu-item-dots {
                 margin: 0 10px 4px 10px;
             }
@@ -2155,18 +2167,29 @@
         }
 
         @media (max-width: 480px) {
+
             /* On very small phones, remove the dots and stack title/price nicely */
-            .signature-menu { padding: 0 15px; }
+            .signature-menu {
+                padding: 0 15px;
+            }
+
             .menu-item-head {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 5px;
             }
-            .menu-item-dots { display: none; }
-            .menu-item-price { font-size: 16px; color: var(--gold-light); }
+
+            .menu-item-dots {
+                display: none;
+            }
+
+            .menu-item-price {
+                font-size: 16px;
+                color: var(--gold-light);
+            }
         }
 
-                /* ============================================
+        /* ============================================
            RESERVATION SECTION
         ============================================ */
         .reservation-section {
@@ -2184,7 +2207,7 @@
             right: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255,193,7,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.08) 0%, transparent 70%);
             z-index: 1;
         }
 
@@ -2204,7 +2227,7 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
         }
 
         .res-image {
@@ -2229,7 +2252,7 @@
             border: 1px solid rgba(255, 193, 7, 0.3);
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             animation: float 4s ease-in-out infinite;
         }
 
@@ -2306,8 +2329,8 @@
             letter-spacing: 0.5px;
         }
 
-        .res-form input, 
-        .res-form select, 
+        .res-form input,
+        .res-form select,
         .res-form textarea {
             width: 100%;
             background: rgba(10, 10, 10, 0.5);
@@ -2327,8 +2350,8 @@
             color: var(--white);
         }
 
-        .res-form input:focus, 
-        .res-form select:focus, 
+        .res-form input:focus,
+        .res-form select:focus,
         .res-form textarea:focus {
             border-color: var(--gold);
             box-shadow: 0 0 15px rgba(255, 193, 7, 0.15);
@@ -2369,19 +2392,24 @@
             .reservation-container {
                 gap: 30px;
             }
+
             .res-floating-card {
-                left: 10px; /* Bring it inside on smaller laptops */
+                left: 10px;
+                /* Bring it inside on smaller laptops */
             }
         }
 
         @media (max-width: 992px) {
             .reservation-container {
-                grid-template-columns: 1fr; /* Stack on tablet */
+                grid-template-columns: 1fr;
+                /* Stack on tablet */
             }
+
             .res-image-wrapper {
                 max-width: 600px;
                 margin: 0 auto 30px;
             }
+
             .res-floating-card {
                 bottom: 20px;
                 left: 20px;
@@ -2392,29 +2420,38 @@
             .reservation-section {
                 padding: 60px 15px;
             }
+
             .res-form {
-                grid-template-columns: 1fr; /* 1 column form on mobile */
+                grid-template-columns: 1fr;
+                /* 1 column form on mobile */
             }
+
             .full-width {
                 grid-column: span 1;
             }
+
             .btn-submit {
                 grid-column: span 1;
             }
+
             .res-form-wrapper {
                 padding: 30px 20px;
             }
+
             .res-form-title {
                 font-size: 28px;
             }
+
             .res-floating-card {
                 position: relative;
-                bottom: 0; left: 0;
+                bottom: 0;
+                left: 0;
                 border-radius: 0 0 20px 20px;
                 box-shadow: none;
                 border-top: none;
                 animation: none;
             }
+
             .res-image {
                 min-height: 300px;
                 border-radius: 20px 20px 0 0;
@@ -2726,7 +2763,7 @@
             </div>
         </section>
 
-                <!-- ============================================
+        <!-- ============================================
              SIGNATURE TABBED MENU SECTION
         ============================================ -->
         <section class="section-padding" id="signature">
@@ -2747,82 +2784,94 @@
 
                 <!-- Menu Items List -->
                 <div class="menu-list" id="menuList">
-                    
+
                     <!-- Item 1: Handi -->
                     <div class="menu-item" data-category="handi">
-                        <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=300&auto=format&fit=crop" alt="Mutton Makhni" class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=300&auto=format&fit=crop"
+                            alt="Mutton Makhni" class="menu-item-img">
                         <div class="menu-item-info">
                             <div class="menu-item-head">
                                 <h3 class="menu-item-title">Mutton Makhni Karahi</h3>
                                 <div class="menu-item-dots"></div>
                                 <span class="menu-item-price">Rs. 3300</span>
                             </div>
-                            <p class="menu-item-desc">Premium mutton cooked in pure butter with our secret traditional spices. (Full Portion)</p>
+                            <p class="menu-item-desc">Premium mutton cooked in pure butter with our secret traditional
+                                spices. (Full Portion)</p>
                         </div>
                     </div>
 
                     <!-- Item 2: BBQ -->
                     <div class="menu-item" data-category="bbq">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=300&auto=format&fit=crop" alt="Kastoori Boti" class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=300&auto=format&fit=crop"
+                            alt="Kastoori Boti" class="menu-item-img">
                         <div class="menu-item-info">
                             <div class="menu-item-head">
                                 <h3 class="menu-item-title">Kastoori Boti</h3>
                                 <div class="menu-item-dots"></div>
                                 <span class="menu-item-price">Rs. 750</span>
                             </div>
-                            <p class="menu-item-desc">Tender chicken pieces marinated in rich cream and roasted almonds over live coals.</p>
+                            <p class="menu-item-desc">Tender chicken pieces marinated in rich cream and roasted almonds
+                                over live coals.</p>
                         </div>
                     </div>
 
                     <!-- Item 3: Fast Food -->
                     <div class="menu-item" data-category="fastfood">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300&auto=format&fit=crop" alt="Crown Crust Pizza" class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300&auto=format&fit=crop"
+                            alt="Crown Crust Pizza" class="menu-item-img">
                         <div class="menu-item-info">
                             <div class="menu-item-head">
                                 <h3 class="menu-item-title">Royal Crown Crust Pizza</h3>
                                 <div class="menu-item-dots"></div>
                                 <span class="menu-item-price">Rs. 1690</span>
                             </div>
-                            <p class="menu-item-desc">Large 13" Pizza. Edges stuffed with yummy sauce, 4 types of chicken, cheese, olives & capsicum.</p>
+                            <p class="menu-item-desc">Large 13" Pizza. Edges stuffed with yummy sauce, 4 types of
+                                chicken, cheese, olives & capsicum.</p>
                         </div>
                     </div>
 
                     <!-- Item 4: Handi -->
                     <div class="menu-item" data-category="handi">
-                        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=300&auto=format&fit=crop" alt="Chicken White" class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=300&auto=format&fit=crop"
+                            alt="Chicken White" class="menu-item-img">
                         <div class="menu-item-info">
                             <div class="menu-item-head">
                                 <h3 class="menu-item-title">Chicken White Karahi</h3>
                                 <div class="menu-item-dots"></div>
                                 <span class="menu-item-price">Rs. 1550</span>
                             </div>
-                            <p class="menu-item-desc">Rich creamy white sauce base, perfectly balanced with mild spices and green chilies.</p>
+                            <p class="menu-item-desc">Rich creamy white sauce base, perfectly balanced with mild spices
+                                and green chilies.</p>
                         </div>
                     </div>
 
                     <!-- Item 5: Fast Food -->
                     <div class="menu-item" data-category="fastfood">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=300&auto=format&fit=crop" alt="Lava Zinger" class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=300&auto=format&fit=crop"
+                            alt="Lava Zinger" class="menu-item-img">
                         <div class="menu-item-info">
                             <div class="menu-item-head">
                                 <h3 class="menu-item-title">Lava Zinger Burger</h3>
                                 <div class="menu-item-dots"></div>
                                 <span class="menu-item-price">Rs. 380</span>
                             </div>
-                            <p class="menu-item-desc">Extra crispy chicken thigh fillet flooded with spicy signature lava sauce and fresh lettuce.</p>
+                            <p class="menu-item-desc">Extra crispy chicken thigh fillet flooded with spicy signature
+                                lava sauce and fresh lettuce.</p>
                         </div>
                     </div>
 
                     <!-- Item 6: BBQ -->
                     <div class="menu-item" data-category="bbq">
-                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=300&auto=format&fit=crop" alt="Malai Boti" class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=300&auto=format&fit=crop"
+                            alt="Malai Boti" class="menu-item-img">
                         <div class="menu-item-info">
                             <div class="menu-item-head">
                                 <h3 class="menu-item-title">Malai Boti Pizza</h3>
                                 <div class="menu-item-dots"></div>
                                 <span class="menu-item-price">Rs. 1650</span>
                             </div>
-                            <p class="menu-item-desc">A blend of malai sauce with combination of black pepper, fresh tomatoes, onions & mushrooms.</p>
+                            <p class="menu-item-desc">A blend of malai sauce with combination of black pepper, fresh
+                                tomatoes, onions & mushrooms.</p>
                         </div>
                     </div>
 
@@ -2837,30 +2886,31 @@
             </div>
         </section>
 
-                <!-- ============================================
+        <!-- ============================================
              TABLE RESERVATION SECTION
         ============================================ -->
         <section class="reservation-section" id="reservation">
             <div class="reservation-container">
-                
+
                 <!-- Left Side: Image & Timings -->
                 <div class="res-image-wrapper">
                     <!-- High quality restaurant interior placeholder -->
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop" alt="Royal Kitchen Interior" class="res-image">
-                    
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop"
+                        alt="Royal Kitchen Interior" class="res-image">
+
                     <!-- Floating Timings Card -->
                     <div class="res-floating-card">
                         <h4 class="res-floating-title">Working Hours</h4>
                         <div class="res-floating-item">
-                            <i class="fas fa-clock"></i> 
+                            <i class="fas fa-clock"></i>
                             <span>Mon - Sun: 12:00 PM — 1:00 AM</span>
                         </div>
                         <div class="res-floating-item">
-                            <i class="fas fa-phone-alt"></i> 
+                            <i class="fas fa-phone-alt"></i>
                             <span>067-3352017</span>
                         </div>
                         <div class="res-floating-item">
-                            <i class="fas fa-map-marker-alt"></i> 
+                            <i class="fas fa-map-marker-alt"></i>
                             <span>Inside Quaid E Azam Stadium</span>
                         </div>
                     </div>
@@ -2869,24 +2919,25 @@
                 <!-- Right Side: Booking Form -->
                 <div class="res-form-wrapper">
                     <h2 class="res-form-title">Reserve Your <span>Table</span></h2>
-                    <p class="res-form-desc">Book your table in advance to avoid waiting, especially on weekends for family dine-ins and BBQ platters.</p>
-                    
+                    <p class="res-form-desc">Book your table in advance to avoid waiting, especially on weekends for
+                        family dine-ins and BBQ platters.</p>
+
                     <form class="res-form" id="bookingForm">
                         <div class="res-form-group">
                             <label for="resName">Full Name</label>
                             <input type="text" id="resName" placeholder="John Doe" required>
                         </div>
-                        
+
                         <div class="res-form-group">
                             <label for="resPhone">Phone Number</label>
                             <input type="tel" id="resPhone" placeholder="0300-1234567" required>
                         </div>
-                        
+
                         <div class="res-form-group">
                             <label for="resDate">Booking Date</label>
                             <input type="date" id="resDate" required>
                         </div>
-                        
+
                         <div class="res-form-group">
                             <label for="resTime">Time</label>
                             <select id="resTime" required>
@@ -2907,10 +2958,11 @@
                                 <option value="10+">More than 10</option>
                             </select>
                         </div>
-                        
+
                         <div class="res-form-group full-width">
                             <label for="resMessage">Special Requests (Optional)</label>
-                            <textarea id="resMessage" placeholder="E.g., Birthday arrangement, baby chair needed..."></textarea>
+                            <textarea id="resMessage"
+                                placeholder="E.g., Birthday arrangement, baby chair needed..."></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit">Confirm Reservation</button>
@@ -2960,11 +3012,15 @@
                     authentic Desi Karahi and modern fast food, Royal Kitchen serves pure food with pure comfort. Lawn &
                     Hall available for weddings and events.</p>
                 <div class="footer-social">
-                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/RKburewala/" title="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/p/DVdndXxiDbU/?igsh=MWExbmtpZGhtdHBrYQ==" title="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="mailto:rkburewala@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/923012449222" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
                 </div>
             </div>
 
@@ -3119,7 +3175,7 @@
 
         console.log('%c🍽️ Royal Kitchen Website is Live', 'font-size: 20px; color: #FFC107; font-weight: bold;');
 
-                // ---- Menu Tab Filtering Logic ----
+        // ---- Menu Tab Filtering Logic ----
         const tabs = document.querySelectorAll('.tab-btn');
         const menuItems = document.querySelectorAll('.menu-item');
 
@@ -3136,7 +3192,7 @@
                 // Loop through items and filter
                 menuItems.forEach(item => {
                     const category = item.getAttribute('data-category');
-                    
+
                     if (filter === 'all' || filter === category) {
                         item.classList.remove('hide');
                         // Re-trigger animation
@@ -3150,10 +3206,10 @@
             });
         });
 
-                // ---- Fake Form Submission Alert ----
+        // ---- Fake Form Submission Alert ----
         const bookingForm = document.getElementById('bookingForm');
-        if(bookingForm) {
-            bookingForm.addEventListener('submit', function(e) {
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function (e) {
                 e.preventDefault(); // Stop page reload
                 alert('Thank you! Your reservation request has been received. Our team will call you shortly to confirm.');
                 bookingForm.reset(); // Clear the form
