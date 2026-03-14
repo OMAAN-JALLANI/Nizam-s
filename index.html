@@ -1942,6 +1942,484 @@
                 font-size: 12px;
             }
         }
+
+                /* ============================================
+           SIGNATURE MENU (TABBED)
+        ============================================ */
+        .signature-menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Tabs Container */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border-color: var(--gold);
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        /* Menu Grid List */
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 50px;
+            row-gap: 30px;
+        }
+
+        /* Individual Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: var(--transition-medium);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid transparent;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 193, 7, 0.03);
+            border-color: rgba(255, 193, 7, 0.1);
+            transform: translateX(10px);
+        }
+
+        /* Menu Image */
+        .menu-item-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 193, 7, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: var(--transition-fast);
+            flex-shrink: 0;
+        }
+
+        .menu-item:hover .menu-item-img {
+            border-color: var(--gold);
+            transform: rotate(10deg) scale(1.05);
+        }
+
+        /* Menu Details */
+        .menu-item-info {
+            flex-grow: 1;
+        }
+
+        .menu-item-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .menu-item-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin: 0;
+            line-height: 1.2;
+            transition: var(--transition-fast);
+        }
+
+        .menu-item:hover .menu-item-title {
+            color: var(--gold);
+        }
+
+        /* The Dotted Line between Title and Price */
+        .menu-item-dots {
+            flex-grow: 1;
+            border-bottom: 2px dotted rgba(255, 193, 7, 0.3);
+            margin: 0 15px 5px 15px;
+            min-width: 20px;
+        }
+
+        .menu-item-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .menu-item-desc {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Hide items that don't match the active tab */
+        .menu-item.hide {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Center Button Area */
+        .menu-btn-container {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN FOR MENU
+        ============================================ */
+        @media (max-width: 992px) {
+            .menu-list {
+                grid-template-columns: 1fr; /* 1 column on tablets */
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-tabs {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto; /* Enable horizontal scroll on mobile */
+                padding-bottom: 10px;
+                /* Hide scrollbar visually but keep functionality */
+                -ms-overflow-style: none;  
+                scrollbar-width: none;  
+            }
+            .menu-tabs::-webkit-scrollbar {
+                display: none;
+            }
+            .tab-btn {
+                white-space: nowrap; /* Keep tab text on one line */
+                font-size: 13px;
+                padding: 8px 20px;
+            }
+
+            .menu-item {
+                padding: 10px 0;
+                gap: 15px;
+            }
+
+            .menu-item-img {
+                width: 75px;
+                height: 75px;
+            }
+
+            .menu-item-title {
+                font-size: 17px;
+            }
+
+            .menu-item-price {
+                font-size: 17px;
+            }
+            
+            .menu-item-dots {
+                margin: 0 10px 4px 10px;
+            }
+
+            .menu-item-desc {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* On very small phones, remove the dots and stack title/price nicely */
+            .signature-menu { padding: 0 15px; }
+            .menu-item-head {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            .menu-item-dots { display: none; }
+            .menu-item-price { font-size: 16px; color: var(--gold-light); }
+        }
+
+                /* ============================================
+           RESERVATION SECTION
+        ============================================ */
+        .reservation-section {
+            position: relative;
+            padding: 100px 30px;
+            background: var(--black-medium);
+            overflow: hidden;
+        }
+
+        /* Abstract Gold Glow Background */
+        .reservation-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,193,7,0.08) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .reservation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Left Side: Images & Info */
+        .res-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .res-image {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .res-image-wrapper:hover .res-image {
+            transform: scale(1.05);
+        }
+
+        /* Floating Info Card on the Image */
+        .res-floating-card {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .res-floating-title {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .res-floating-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .res-floating-item i {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        /* Right Side: The Form */
+        .res-form-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 193, 7, 0.1);
+            padding: 50px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .res-form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--white);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .res-form-title span {
+            color: var(--gold);
+        }
+
+        .res-form-desc {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .res-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .res-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Span 2 columns for the message box */
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .res-form label {
+            font-size: 13px;
+            color: var(--white-off);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .res-form input, 
+        .res-form select, 
+        .res-form textarea {
+            width: 100%;
+            background: rgba(10, 10, 10, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px 15px;
+            border-radius: 10px;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: var(--transition-fast);
+            outline: none;
+        }
+
+        /* Fixing dropdown color issue in dark mode */
+        .res-form select option {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .res-form input:focus, 
+        .res-form select:focus, 
+        .res-form textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.15);
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .res-form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .btn-submit {
+            grid-column: span 2;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border: none;
+            border-radius: 10px;
+            color: var(--black);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN FOR RESERVATION
+        ============================================ */
+        @media (max-width: 1024px) {
+            .reservation-container {
+                gap: 30px;
+            }
+            .res-floating-card {
+                left: 10px; /* Bring it inside on smaller laptops */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .reservation-container {
+                grid-template-columns: 1fr; /* Stack on tablet */
+            }
+            .res-image-wrapper {
+                max-width: 600px;
+                margin: 0 auto 30px;
+            }
+            .res-floating-card {
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .reservation-section {
+                padding: 60px 15px;
+            }
+            .res-form {
+                grid-template-columns: 1fr; /* 1 column form on mobile */
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            .btn-submit {
+                grid-column: span 1;
+            }
+            .res-form-wrapper {
+                padding: 30px 20px;
+            }
+            .res-form-title {
+                font-size: 28px;
+            }
+            .res-floating-card {
+                position: relative;
+                bottom: 0; left: 0;
+                border-radius: 0 0 20px 20px;
+                box-shadow: none;
+                border-top: none;
+                animation: none;
+            }
+            .res-image {
+                min-height: 300px;
+                border-radius: 20px 20px 0 0;
+            }
+        }
     </style>
 </head>
 
@@ -2248,6 +2726,199 @@
             </div>
         </section>
 
+                <!-- ============================================
+             SIGNATURE TABBED MENU SECTION
+        ============================================ -->
+        <section class="section-padding" id="signature">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-star"></i></div>
+                <h2 class="section-title">Royal <span>Signature</span> Series</h2>
+                <p class="section-subtitle">Handpicked master dishes by our Head Chef</p>
+            </div>
+
+            <div class="signature-menu">
+                <!-- Filter Tabs -->
+                <div class="menu-tabs" id="menuTabs">
+                    <button class="tab-btn active" data-filter="all">All Dishes</button>
+                    <button class="tab-btn" data-filter="handi">Desi Karahi</button>
+                    <button class="tab-btn" data-filter="bbq">BBQ Platters</button>
+                    <button class="tab-btn" data-filter="fastfood">Fast Food</button>
+                </div>
+
+                <!-- Menu Items List -->
+                <div class="menu-list" id="menuList">
+                    
+                    <!-- Item 1: Handi -->
+                    <div class="menu-item" data-category="handi">
+                        <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=300&auto=format&fit=crop" alt="Mutton Makhni" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <div class="menu-item-head">
+                                <h3 class="menu-item-title">Mutton Makhni Karahi</h3>
+                                <div class="menu-item-dots"></div>
+                                <span class="menu-item-price">Rs. 3300</span>
+                            </div>
+                            <p class="menu-item-desc">Premium mutton cooked in pure butter with our secret traditional spices. (Full Portion)</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: BBQ -->
+                    <div class="menu-item" data-category="bbq">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=300&auto=format&fit=crop" alt="Kastoori Boti" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <div class="menu-item-head">
+                                <h3 class="menu-item-title">Kastoori Boti</h3>
+                                <div class="menu-item-dots"></div>
+                                <span class="menu-item-price">Rs. 750</span>
+                            </div>
+                            <p class="menu-item-desc">Tender chicken pieces marinated in rich cream and roasted almonds over live coals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Fast Food -->
+                    <div class="menu-item" data-category="fastfood">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300&auto=format&fit=crop" alt="Crown Crust Pizza" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <div class="menu-item-head">
+                                <h3 class="menu-item-title">Royal Crown Crust Pizza</h3>
+                                <div class="menu-item-dots"></div>
+                                <span class="menu-item-price">Rs. 1690</span>
+                            </div>
+                            <p class="menu-item-desc">Large 13" Pizza. Edges stuffed with yummy sauce, 4 types of chicken, cheese, olives & capsicum.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Handi -->
+                    <div class="menu-item" data-category="handi">
+                        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=300&auto=format&fit=crop" alt="Chicken White" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <div class="menu-item-head">
+                                <h3 class="menu-item-title">Chicken White Karahi</h3>
+                                <div class="menu-item-dots"></div>
+                                <span class="menu-item-price">Rs. 1550</span>
+                            </div>
+                            <p class="menu-item-desc">Rich creamy white sauce base, perfectly balanced with mild spices and green chilies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Fast Food -->
+                    <div class="menu-item" data-category="fastfood">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=300&auto=format&fit=crop" alt="Lava Zinger" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <div class="menu-item-head">
+                                <h3 class="menu-item-title">Lava Zinger Burger</h3>
+                                <div class="menu-item-dots"></div>
+                                <span class="menu-item-price">Rs. 380</span>
+                            </div>
+                            <p class="menu-item-desc">Extra crispy chicken thigh fillet flooded with spicy signature lava sauce and fresh lettuce.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: BBQ -->
+                    <div class="menu-item" data-category="bbq">
+                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=300&auto=format&fit=crop" alt="Malai Boti" class="menu-item-img">
+                        <div class="menu-item-info">
+                            <div class="menu-item-head">
+                                <h3 class="menu-item-title">Malai Boti Pizza</h3>
+                                <div class="menu-item-dots"></div>
+                                <span class="menu-item-price">Rs. 1650</span>
+                            </div>
+                            <p class="menu-item-desc">A blend of malai sauce with combination of black pepper, fresh tomatoes, onions & mushrooms.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA Button -->
+                <div class="menu-btn-container">
+                    <a href="#full-menu" class="btn-secondary">
+                        <i class="fas fa-book-open"></i> Download Full PDF Menu
+                    </a>
+                </div>
+            </div>
+        </section>
+
+                <!-- ============================================
+             TABLE RESERVATION SECTION
+        ============================================ -->
+        <section class="reservation-section" id="reservation">
+            <div class="reservation-container">
+                
+                <!-- Left Side: Image & Timings -->
+                <div class="res-image-wrapper">
+                    <!-- High quality restaurant interior placeholder -->
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop" alt="Royal Kitchen Interior" class="res-image">
+                    
+                    <!-- Floating Timings Card -->
+                    <div class="res-floating-card">
+                        <h4 class="res-floating-title">Working Hours</h4>
+                        <div class="res-floating-item">
+                            <i class="fas fa-clock"></i> 
+                            <span>Mon - Sun: 12:00 PM — 1:00 AM</span>
+                        </div>
+                        <div class="res-floating-item">
+                            <i class="fas fa-phone-alt"></i> 
+                            <span>067-3352017</span>
+                        </div>
+                        <div class="res-floating-item">
+                            <i class="fas fa-map-marker-alt"></i> 
+                            <span>Inside Quaid E Azam Stadium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Booking Form -->
+                <div class="res-form-wrapper">
+                    <h2 class="res-form-title">Reserve Your <span>Table</span></h2>
+                    <p class="res-form-desc">Book your table in advance to avoid waiting, especially on weekends for family dine-ins and BBQ platters.</p>
+                    
+                    <form class="res-form" id="bookingForm">
+                        <div class="res-form-group">
+                            <label for="resName">Full Name</label>
+                            <input type="text" id="resName" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div class="res-form-group">
+                            <label for="resPhone">Phone Number</label>
+                            <input type="tel" id="resPhone" placeholder="0300-1234567" required>
+                        </div>
+                        
+                        <div class="res-form-group">
+                            <label for="resDate">Booking Date</label>
+                            <input type="date" id="resDate" required>
+                        </div>
+                        
+                        <div class="res-form-group">
+                            <label for="resTime">Time</label>
+                            <select id="resTime" required>
+                                <option value="" disabled selected>Select Time</option>
+                                <option value="Lunch">Lunch (12 PM - 4 PM)</option>
+                                <option value="Evening">Evening (4 PM - 7 PM)</option>
+                                <option value="Dinner">Dinner (7 PM - 12 AM)</option>
+                            </select>
+                        </div>
+
+                        <div class="res-form-group full-width">
+                            <label for="resGuests">Number of Guests</label>
+                            <select id="resGuests" required>
+                                <option value="" disabled selected>How many people?</option>
+                                <option value="1-2">1 - 2 Persons</option>
+                                <option value="3-5">3 - 5 Persons</option>
+                                <option value="6-10">6 - 10 Persons (Family Size)</option>
+                                <option value="10+">More than 10</option>
+                            </select>
+                        </div>
+                        
+                        <div class="res-form-group full-width">
+                            <label for="resMessage">Special Requests (Optional)</label>
+                            <textarea id="resMessage" placeholder="E.g., Birthday arrangement, baby chair needed..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Confirm Reservation</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <!-- ============================================
@@ -2447,6 +3118,47 @@
         });
 
         console.log('%c🍽️ Royal Kitchen Website is Live', 'font-size: 20px; color: #FFC107; font-weight: bold;');
+
+                // ---- Menu Tab Filtering Logic ----
+        const tabs = document.querySelectorAll('.tab-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Get filter category
+                const filter = tab.getAttribute('data-filter');
+
+                // Loop through items and filter
+                menuItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    
+                    if (filter === 'all' || filter === category) {
+                        item.classList.remove('hide');
+                        // Re-trigger animation
+                        item.style.animation = 'none';
+                        item.offsetHeight; /* trigger reflow */
+                        item.style.animation = null;
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+
+                // ---- Fake Form Submission Alert ----
+        const bookingForm = document.getElementById('bookingForm');
+        if(bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Stop page reload
+                alert('Thank you! Your reservation request has been received. Our team will call you shortly to confirm.');
+                bookingForm.reset(); // Clear the form
+            });
+        }
     </script>
 </body>
 
